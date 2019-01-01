@@ -1,0 +1,15 @@
+.todo-item {
+  padding: 10px;
+  input.toggle {
+    margin: 0 10px;
+  }
+  .todo-title {
+    width: 50%;
+    display: inline-block;
+  }
+  .todo-title.finished {
+    text-decoration: line-through;
+    color: #ccc;
+  }
+}
+
