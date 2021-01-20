@@ -14,6 +14,11 @@ const config = {
       source: path.resolve(__dirname, 'src/source')
     }
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    open: true, // 自动打开
+    port: 8081, // 默认8080
+  },
   module: {
     rules: [
       {

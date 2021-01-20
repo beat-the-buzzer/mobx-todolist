@@ -142,3 +142,24 @@ export  { todoList };
 主要是`Mobx`提供的一些API：
 
 [https://github.com/beat-the-buzzer/mobx-demo](https://github.com/beat-the-buzzer/mobx-demo)
+
+#### 修改成React Hooks的写法
+
+1. 修改`package.json`里面`React`的版本：
+
+```json
+{
+  "react": "^17.0.1",
+  "react-dom": "^17.0.1"
+}
+```
+
+2. 将装饰器里面的语法改成高阶函数调用的方式
+
+剩余问题：`AddTodo.jsx` observe和inject的顺序不同导致了警告：
+
+```
+Mobx observer: You are trying to use 'observer' on a component that already has 'inject'. Please apply 'observer' before applying 'inject'
+```
+
+但是调整错误之后直接报错，目前尚未找到有效的解决办法。
