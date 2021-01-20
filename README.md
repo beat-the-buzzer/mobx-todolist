@@ -25,11 +25,22 @@ npm install sass-loader css-loader style-loader -D
 npm install node-sass -g
 npm install node-sass -D
 // scss & css
+
+# 新增webpack-dev-server
+npm install webpack-dev-server -D
 ```
 
 #### webpack配置
 
-这个例子的`webpack`配置完全是手写的，但是没有配置`webpack-dev-server`，只能访问打包后的静态资源。
+~~这个例子的`webpack`配置完全是手写的，但是没有配置`webpack-dev-server`，只能访问打包后的静态资源。~~
+
+package.json里面新增本地启动
+
+```json
+{
+  "start": "webpack-dev-server --config webpack.config.js"
+}
+```
 
 ```js
 const path = require('path');
@@ -40,6 +51,12 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
+  },
+  // 新增webpack-dev-server
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist'),
+    open: true, // 自动打开
+    port: 8081, // 默认8080
   },
   // 项目入口和生成的资源文件的地址
   resolve: {
