@@ -1,4 +1,5 @@
 import { observable, action, computed } from 'mobx';
+
 class Todo {
   @observable id = Math.random();
   @observable title = "";
@@ -29,4 +30,5 @@ class TodoList {
 }
 
 let todoList = new TodoList();
+
 export  { todoList };

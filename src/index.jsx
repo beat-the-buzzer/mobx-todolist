@@ -12,8 +12,6 @@ class App extends Component {
   }
 }
 
-
-
 ReactDOM.render(
   <Provider {...stores}>
     <App />
